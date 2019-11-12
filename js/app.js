@@ -55,89 +55,45 @@ function displayContents(shopLocation, cityName) {
   seattleList.appendChild(total);
 }
 
+function SalmonCookiesShop(shopLocation, min, max, avg, address, phone) {
+  this.location = shopLocation;
+  this.minCus = min;
+  this.maxCus = max;
+  this.avgCookieSale = avg;
+  this.cookiesSoldEachHour = [];
+  this.totalCookies = 0,
+  this.address = address;
+  this.phone = phone;
+}
 
-var seattleLocation = {
-  location: 'Seattle',
-  minCus: 23,
-  maxCus: 65,
-  avgCookieSale: 6.3,
-  cookiesSoldEachHour: [],
-  totalCookies: 0,
-  address: '522 19th Ave E, Seattle, WA 98112',
-  phone: '(206)735-7970',
-};
-
+var seattleLocation = new SalmonCookiesShop('Seattle', 23, 65, 6.3, '522 19th Ave E, Seattle, WA 98112', '(206)735-7970');
+console.log('seattleLocation1 :', seattleLocation);
 getNumCookiesEachHour(seattleLocation.maxCus, seattleLocation.minCus);
 getCookiesSalesReport(seattleLocation);
-
+console.log('seattleLocation2 :', seattleLocation);
 displayContents(seattleLocation, 'seattle');
 
 
-var tokyoLocation = {
-  location: 'Tokyo',
-  minCus: 3,
-  maxCus: 24,
-  avgCookieSale: 1.2,
-  cookiesSoldEachHour: [],
-  totalCookies: 0,
-  address: '1 Chome-21-15 Jingumae, Shibuya City, Tokyo 150-0001, Japan',
-  phone: '+81 120-867-622',
-};
-
+var tokyoLocation = new SalmonCookiesShop('Tokyo', 3, 24, 1.2, '1 Chome-21-15 Jingumae, Shibuya City, Tokyo 150-0001, Japan', '+81 120-867-622');
 getNumCookiesEachHour(tokyoLocation.maxCus, tokyoLocation.minCus);
 getCookiesSalesReport(tokyoLocation);
-
 displayContents(tokyoLocation, 'tokyo');
 
 
-
-var dubaiLocation = {
-  location: 'Dubai',
-  minCus: 11,
-  maxCus: 38,
-  avgCookieSale: 3.7,
-  cookiesSoldEachHour: [],
-  totalCookies: 0,
-  address: '34 14 C St - Dubai - United Arab Emirates',
-  phone: '+971 50 164 9000',
-};
-
+var dubaiLocation = new SalmonCookiesShop('Dubai', 11, 38, 3.7, '34 14 C St - Dubai - United Arab Emirates', '+971 50 164 9000');
 getNumCookiesEachHour(dubaiLocation.maxCus, dubaiLocation.minCus);
 getCookiesSalesReport(dubaiLocation);
-
 displayContents(dubaiLocation, 'dubai');
 
 
-var parisLocation = {
-  location: 'Paris',
-  minCus: 20,
-  maxCus: 38,
-  avgCookieSale: 2.3,
-  cookiesSoldEachHour: [],
-  totalCookies: 0,
-  address: '34 Rue Montorgueil, 75001 Paris, France',
-  phone: '+33 9 83 48 36 76',
-};
-
+var parisLocation = new SalmonCookiesShop('Paris', 20, 38, 2.3, '34 Rue Montorgueil, 75001 Paris, France', '+33 9 83 48 36 76');
 getNumCookiesEachHour(parisLocation.maxCus, parisLocation.minCus);
 getCookiesSalesReport(parisLocation);
-
 displayContents(parisLocation, 'paris');
 
 
-var limaLocation = {
-  location: 'Lima',
-  minCus: 2,
-  maxCus: 16,
-  avgCookieSale: 4.6,
-  cookiesSoldEachHour: [],
-  totalCookies: 0,
-  address: 'Jirón Mariscal Miller 212, Cercado de Lima 15046, Peru',
-  phone: '(800)457-4779',
-};
-
+var limaLocation = new SalmonCookiesShop('Lima', 2, 16, 4.6, 'Jirón Mariscal Miller 212, Cercado de Lima 15046, Peru', '(800)457-4779');
 getNumCookiesEachHour(limaLocation.maxCus, limaLocation.minCus);
 getCookiesSalesReport(limaLocation);
-
 displayContents(limaLocation, 'lima');
 
