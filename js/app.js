@@ -29,30 +29,43 @@ function createHourlySalesObj(hoursArr, salesArr) {
   return obj;
 }
 
+// Helper function to display document elements
+function addElement(tag, container, text) {
+  var element = document.createElement(tag);
+  container.appendChild(element);
+  element.textContent = text;
+  return element;
+}
+
+// Display all the data by location
 function displayContents(shopLocation, cityName) {
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var city = document.getElementById(`${cityName}`);
-  var seattleTitle = document.createElement('h2');
-  seattleTitle.textContent = shopLocation.location;
-  city.appendChild(seattleTitle);
-
-  var shopAddr = document.createElement('p');
-  shopAddr.textContent = shopLocation.address;
-  city.appendChild(shopAddr);
-  var shopPhoneNum = document.createElement('p');
-  shopPhoneNum.textContent = shopLocation.phone;
-  city.appendChild(shopPhoneNum);
-
-  var seattleList = document.createElement('ul');
+  // var seattleTitle = document.createElement('h2');
+  addElement('h2', city, shopLocation.location);
+  // seattleTitle.textContent = shopLocation.location;
+  // city.appendChild(seattleTitle);
+  addElement('p', city, shopLocation.address);
+  // var shopAddr = document.createElement('p');
+  // shopAddr.textContent = shopLocation.address;
+  // city.appendChild(shopAddr);
+  addElement('p', city, shopLocation.phone);
+  // var shopPhoneNum = document.createElement('p');
+  // shopPhoneNum.textContent = shopLocation.phone;
+  // city.appendChild(shopPhoneNum);
+  var seattleList = addElement('ul', city);
+  // var seattleList = document.createElement('ul');
   city.appendChild(seattleList);
   for (var i = 0; i < 14; i++) {
-    var byHourElem = document.createElement('li');
-    byHourElem.textContent = hourlySalesArr[i].key + ': ' + hourlySalesArr[i].value + ' cookies';
-    seattleList.appendChild(byHourElem);
+    addElement('li', seattleList, hourlySalesArr[i].key + ': ' + hourlySalesArr[i].value + ' cookies');
+    // var byHourElem = document.createElement('li');
+    // byHourElem.textContent = hourlySalesArr[i].key + ': ' + hourlySalesArr[i].value + ' cookies';
+    // seattleList.appendChild(byHourElem);
   }
-  var total = document.createElement('li');
-  total.textContent = 'Total: ' + shopLocation.totalCookies + ' cookies';
-  seattleList.appendChild(total);
+  addElement('li', seattleList, 'Total: ' + shopLocation.totalCookies + ' cookies');
+  // var total = document.createElement('li');
+  // total.textContent = 'Total: ' + shopLocation.totalCookies + ' cookies';
+  // seattleList.appendChild(total);
 }
 
 function SalmonCookiesShop(shopLocation, min, max, avg, address, phone) {
