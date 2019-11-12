@@ -47,3 +47,7 @@ li {
 li:last-child {
   background-color: rgb(25, 24, 31);
 }
+
+p {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
