@@ -53,7 +53,6 @@ addElement('th', tableRowhead, 'Daily Location Total');
 
 
 function disaplyTablebyCity(shopLocation) {
-  console.log('render??');
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var tableRowBody = addElement('tr', tableBycity);
   tableBycity.appendChild(tableRowBody);
@@ -61,8 +60,17 @@ function disaplyTablebyCity(shopLocation) {
   for (var i = 0; i < hourlySalesArr.length; i++) {
     addElement('td', tableRowBody, hourlySalesArr[i].value);
   }
-  console.log('shopLocation.totalCookies :', shopLocation.totalCookies);
   addElement('td', tableRowBody, shopLocation.totalCookies + ' cookies');
+}
+
+function disaplyTotalTable(seattle, tokyo, dubai, paris, lima) {
+  var tableRowBody = addElement('tr', tableBycity);
+  tableBycity.appendChild(tableRowBody);
+  addElement('td', tableRowBody, 'Total');
+  for (var i = 0; i < 14; i++) {
+    addElement('td', tableRowBody, seattle.cookiesSoldEachHour[i] + tokyo.cookiesSoldEachHour[i] + dubai.cookiesSoldEachHour[i] + paris.cookiesSoldEachHour[i] + lima.cookiesSoldEachHour[i]);
+  }
+  addElement('td', tableRowBody, seattle.totalCookies + tokyo.totalCookies + dubai.totalCookies + paris.totalCookies + lima.totalCookies);
 }
 
 
@@ -101,3 +109,5 @@ var limaLocation = new SalmonCookiesShop('Lima', 2, 16, 4.6, 'Jirón Mariscal Mi
 getNumCookiesEachHour(limaLocation.maxCus, limaLocation.minCus);
 getCookiesSalesReport(limaLocation);
 disaplyTablebyCity(limaLocation);
+
+disaplyTotalTable(seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation);
