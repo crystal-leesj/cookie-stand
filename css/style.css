@@ -12,7 +12,7 @@ h2 {
   color: darkslateblue;
 }
 
-ul {
+/* ul {
   width: 30%;
   border: 2px solid linen;
   border-radius: 25px;
@@ -46,6 +46,19 @@ li {
 
 li:last-child {
   background-color: rgb(25, 24, 31);
+} */
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td:last-child {
+  background-color: rgb(91, 80, 151);
 }
 
 p {
