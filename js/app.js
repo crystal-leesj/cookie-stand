@@ -70,7 +70,7 @@ function disaplyTotalTable(seattle, tokyo, dubai, paris, lima) {
   for (var i = 0; i < 14; i++) {
     addElement('td', tableRowBody, seattle.cookiesSoldEachHour[i] + tokyo.cookiesSoldEachHour[i] + dubai.cookiesSoldEachHour[i] + paris.cookiesSoldEachHour[i] + lima.cookiesSoldEachHour[i]);
   }
-  addElement('td', tableRowBody, seattle.totalCookies + tokyo.totalCookies + dubai.totalCookies + paris.totalCookies + lima.totalCookies);
+  addElement('td', tableRowBody, seattle.totalCookies + tokyo.totalCookies + dubai.totalCookies + paris.totalCookies + lima.totalCookies + ' cookies');
 }
 
 

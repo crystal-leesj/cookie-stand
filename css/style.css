@@ -26,6 +26,10 @@ td:last-child {
   background-color: rgb(91, 80, 151);
 }
 
+tr:last-child {
+  background-color: rgb(221, 177, 111);
+}
+
 p {
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
 }
