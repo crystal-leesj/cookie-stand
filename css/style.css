@@ -1,1 +1,53 @@
- 
+body {
+  background-color: darksalmon;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  color: darkolivegreen;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: darkslateblue;
+}
+
+ul {
+  width: 30%;
+  border: 2px solid linen;
+  border-radius: 25px;
+  padding: 20px 40px;
+}
+
+#seattle ul {
+  background-color: darkslategray;
+}
+
+#tokyo ul {
+  background-color: darkslateblue;
+}
+
+#dubai ul {
+  background-color: rgb(115, 116, 156);
+}
+
+#paris ul {
+  background-color: rgb(73, 85, 40);
+}
+
+#lima ul {
+  background-color: rgb(45, 118, 119);
+}
+
+li {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  color: lightpink;
+}
+
+li:last-child {
+  background-color: rgb(25, 24, 31);
+}
+
+p {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
