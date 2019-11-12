@@ -1,1 +1,23 @@
- 
+body {
+  background-color: darksalmon;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  color: darkolivegreen;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: darkslateblue;
+}
+
+ul {
+  background-color: darkslategray;
+  width: 30%;
+}
+
+li {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  color: lightpink;
+}
