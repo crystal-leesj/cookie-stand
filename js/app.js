@@ -10,7 +10,7 @@ function getNumCookiesEachHour(max, min, avg) {
 
 // Get array of 14 hours of report with total sales
 function getCookiesSalesReport(location) {
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < hours.length; i++) {
     var cookies = getNumCookiesEachHour(location.maxCus, location.minCus, location.avgCookieSale);
     location.cookiesSoldEachHour.push(cookies);
     location.totalCookies += cookies;
@@ -58,7 +58,7 @@ function disaplyTablebyCity(shopLocation) {
   var tableRowBody = addElement('tr', tableBycity);
   tableBycity.appendChild(tableRowBody);
   addElement('td', tableRowBody, shopLocation.location);
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < hourlySalesArr.length; i++) {
     addElement('td', tableRowBody, hourlySalesArr[i].value);
   }
   console.log('shopLocation.totalCookies :', shopLocation.totalCookies);
