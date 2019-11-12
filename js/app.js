@@ -19,14 +19,14 @@ function getCookiesSalesReport(location) {
 
 // Create Object pairs of the time and the sales in each hours
 function createHourlySalesObj(hoursArr, salesArr) {
-  var obj = [];
+  var arrObj = [];
   for (var i = 0; i < hoursArr.length; i++) {
-    obj.push({
+    arrObj.push({
       key: hoursArr[i],
       value: salesArr[i],
     });
   }
-  return obj;
+  return arrObj;
 }
 
 // Helper function to display document elements
@@ -41,31 +41,15 @@ function addElement(tag, container, text) {
 function displayContents(shopLocation, cityName) {
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var city = document.getElementById(`${cityName}`);
-  // var seattleTitle = document.createElement('h2');
   addElement('h2', city, shopLocation.location);
-  // seattleTitle.textContent = shopLocation.location;
-  // city.appendChild(seattleTitle);
   addElement('p', city, shopLocation.address);
-  // var shopAddr = document.createElement('p');
-  // shopAddr.textContent = shopLocation.address;
-  // city.appendChild(shopAddr);
   addElement('p', city, shopLocation.phone);
-  // var shopPhoneNum = document.createElement('p');
-  // shopPhoneNum.textContent = shopLocation.phone;
-  // city.appendChild(shopPhoneNum);
   var seattleList = addElement('ul', city);
-  // var seattleList = document.createElement('ul');
   city.appendChild(seattleList);
   for (var i = 0; i < 14; i++) {
     addElement('li', seattleList, hourlySalesArr[i].key + ': ' + hourlySalesArr[i].value + ' cookies');
-    // var byHourElem = document.createElement('li');
-    // byHourElem.textContent = hourlySalesArr[i].key + ': ' + hourlySalesArr[i].value + ' cookies';
-    // seattleList.appendChild(byHourElem);
   }
   addElement('li', seattleList, 'Total: ' + shopLocation.totalCookies + ' cookies');
-  // var total = document.createElement('li');
-  // total.textContent = 'Total: ' + shopLocation.totalCookies + ' cookies';
-  // seattleList.appendChild(total);
 }
 
 function SalmonCookiesShop(shopLocation, min, max, avg, address, phone) {
