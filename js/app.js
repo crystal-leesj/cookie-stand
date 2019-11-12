@@ -45,7 +45,7 @@ tableContainer.appendChild(tableBycity);
 var tableRowhead = addElement('tr', tableBycity);
 tableBycity.appendChild(tableRowhead);
 
-addElement('th', tableRowhead, '&nbsp;');
+addElement('th', tableRowhead, '');
 for (var ii = 0; ii < hours.length; ii++) {
   addElement('th', tableRowhead, hours[ii]);
 }
