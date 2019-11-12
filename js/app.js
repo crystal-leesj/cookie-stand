@@ -37,6 +37,8 @@ var seattleLocation = {
   avgCookieSale: 6.3,
   cookiesSoldEachHour: [],
   totalCookies: 0,
+  address: '522 19th Ave E, Seattle, WA 98112',
+  phone: '(206)735-7970',
 };
 
 getNumCookiesEachHour(seattleLocation.maxCus, seattleLocation.minCus);
@@ -48,6 +50,13 @@ var seattle = document.getElementById('seattle');
 var seattleTitle = document.createElement('h2');
 seattleTitle.textContent = seattleLocation.location;
 seattle.appendChild(seattleTitle);
+
+var seattleInfoAddr = document.createElement('p');
+seattleInfoAddr.textContent = seattleLocation.address;
+seattle.appendChild(seattleInfoAddr);
+var seattleInfoPhone = document.createElement('p');
+seattleInfoPhone.textContent = seattleLocation.phone;
+seattle.appendChild(seattleInfoPhone);
 
 var seattleList = document.createElement('ul');
 seattle.appendChild(seattleList);
@@ -68,6 +77,8 @@ var tokyoLocation = {
   avgCookieSale: 1.2,
   cookiesSoldEachHour: [],
   totalCookies: 0,
+  address: '1 Chome-21-15 Jingumae, Shibuya City, Tokyo 150-0001, Japan',
+  phone: '+81 120-867-622',
 };
 
 getNumCookiesEachHour(tokyoLocation.maxCus, tokyoLocation.minCus);
@@ -78,6 +89,13 @@ var tokyo = document.getElementById('tokyo');
 var tokyoTitle = document.createElement('h2');
 tokyoTitle.textContent = tokyoLocation.location;
 tokyo.appendChild(tokyoTitle);
+
+var tokyoInfoAddr = document.createElement('p');
+tokyoInfoAddr.textContent = tokyoLocation.address;
+tokyo.appendChild(tokyoInfoAddr);
+var tokyoInfoPhone = document.createElement('p');
+tokyoInfoPhone.textContent = tokyoLocation.phone;
+tokyo.appendChild(tokyoInfoPhone);
 
 var tokyoList = document.createElement('ul');
 tokyo.appendChild(tokyoList);
@@ -98,6 +116,8 @@ var dubaiLocation = {
   avgCookieSale: 3.7,
   cookiesSoldEachHour: [],
   totalCookies: 0,
+  address: '34 14 C St - Dubai - United Arab Emirates',
+  phone: '+971 50 164 9000',
 };
 
 getNumCookiesEachHour(dubaiLocation.maxCus, dubaiLocation.minCus);
@@ -108,6 +128,13 @@ var dubai = document.getElementById('dubai');
 var dubaiTitle = document.createElement('h2');
 dubaiTitle.textContent = dubaiLocation.location;
 dubai.appendChild(dubaiTitle);
+
+var dubaiInfoAddr = document.createElement('p');
+dubaiInfoAddr.textContent = dubaiLocation.address;
+dubai.appendChild(dubaiInfoAddr);
+var dubaiInfoPhone = document.createElement('p');
+dubaiInfoPhone.textContent = dubaiLocation.phone;
+dubai.appendChild(dubaiInfoPhone);
 
 var dubaiList = document.createElement('ul');
 dubai.appendChild(dubaiList);
@@ -128,6 +155,8 @@ var parisLocation = {
   avgCookieSale: 2.3,
   cookiesSoldEachHour: [],
   totalCookies: 0,
+  address: '34 Rue Montorgueil, 75001 Paris, France',
+  phone: '+33 9 83 48 36 76',
 };
 
 getNumCookiesEachHour(parisLocation.maxCus, parisLocation.minCus);
@@ -138,6 +167,13 @@ var paris = document.getElementById('paris');
 var parisTitle = document.createElement('h2');
 parisTitle.textContent = parisLocation.location;
 paris.appendChild(parisTitle);
+
+var parisInfoAddr = document.createElement('p');
+parisInfoAddr.textContent = parisLocation.address;
+paris.appendChild(parisInfoAddr);
+var parisInfoPhone = document.createElement('p');
+parisInfoPhone.textContent = parisLocation.phone;
+paris.appendChild(parisInfoPhone);
 
 var parisList = document.createElement('ul');
 paris.appendChild(parisList);
@@ -158,6 +194,8 @@ var limaLocation = {
   avgCookieSale: 4.6,
   cookiesSoldEachHour: [],
   totalCookies: 0,
+  address: 'Jirón Mariscal Miller 212, Cercado de Lima 15046, Peru',
+  phone: '(800)457-4779',
 };
 
 getNumCookiesEachHour(limaLocation.maxCus, limaLocation.minCus);
@@ -168,6 +206,13 @@ var lima = document.getElementById('lima');
 var limaTitle = document.createElement('h2');
 limaTitle.textContent = limaLocation.location;
 lima.appendChild(limaTitle);
+
+var limaInfoAddr = document.createElement('p');
+limaInfoAddr.textContent = limaLocation.address;
+lima.appendChild(limaInfoAddr);
+var limaInfoPhone = document.createElement('p');
+limaInfoPhone.textContent = limaLocation.phone;
+lima.appendChild(limaInfoPhone);
 
 var limaList = document.createElement('ul');
 lima.appendChild(limaList);
