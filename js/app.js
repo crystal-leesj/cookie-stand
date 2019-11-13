@@ -3,16 +3,6 @@
 // Set these hours as a global variable
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
-// Generate the random number to get number of cookie sales in an hour
-// Get array of 14 hours of report with total sales
-// function getCookiesSalesReport(location, max, min, avg) {
-//   for (var i = 0; i < hours.length; i++) {
-//     var cookies = Math.floor(((Math.random() * (max - min +1)) + min) * avg);
-//     location.cookiesSoldEachHour.push(cookies);
-//     location.totalCookies += cookies;
-//   }
-// }
-
 // Create Object pairs of the time and the sales in each hours
 function createHourlySalesObj(hoursArr, salesArr) {
   var arrObj = [];
@@ -47,9 +37,9 @@ for (var ii = 0; ii < hours.length; ii++) {
 }
 addElement('th', tableRowhead, 'Daily Location Total');
 
-
+// Display a city by a row
 function disaplyTablebyCity(shopLocation) {
-  shopLocation.getCookiesSalesReport();
+  // shopLocation.getCookiesSalesReport();
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var tableRowBody = addElement('tr', tableBycity);
   tableBycity.appendChild(tableRowBody);
@@ -60,11 +50,12 @@ function disaplyTablebyCity(shopLocation) {
   addElement('td', tableRowBody, shopLocation.totalCookies + ' cookies');
 }
 
+// Display total row
 function disaplyTotalTable(seattle, tokyo, dubai, paris, lima) {
   var tableRowBody = addElement('tr', tableBycity);
   tableBycity.appendChild(tableRowBody);
   addElement('td', tableRowBody, 'Total');
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < hours.length; i++) {
     addElement('td', tableRowBody, seattle.cookiesSoldEachHour[i] + tokyo.cookiesSoldEachHour[i] + dubai.cookiesSoldEachHour[i] + paris.cookiesSoldEachHour[i] + lima.cookiesSoldEachHour[i]);
   }
   addElement('td', tableRowBody, seattle.totalCookies + tokyo.totalCookies + dubai.totalCookies + paris.totalCookies + lima.totalCookies + ' cookies');
@@ -80,44 +71,33 @@ function SalmonCookiesShop(shopLocation, min, max, avg, address, phone) {
   this.totalCookies = 0,
   this.address = address;
   this.phone = phone;
+  this.getCookiesSalesReport();
 }
 
+
+// Generate the random number to get number of cookie sales in an hour
+// Get array of 14 hours of report with total sales
 SalmonCookiesShop.prototype.getCookiesSalesReport = function(){
-  console.log('this.maxCus :', this.maxCus);
   for (var i = 0; i < hours.length; i++) {
     var cookies = Math.floor(((Math.random() * (this.maxCus - this.minCus +1)) + this.minCus) * this.avgCookieSale);
-    console.log('cookies :', cookies);
     this.cookiesSoldEachHour.push(cookies);
     this.totalCookies += cookies;
   }
 };
 
-// function getCookiesSalesReport(location, max, min, avg) {
-//   for (var i = 0; i < hours.length; i++) {
-//     var cookies = Math.floor(((Math.random() * (max - min +1)) + min) * avg);
-//     location.cookiesSoldEachHour.push(cookies);
-//     location.totalCookies += cookies;
-//   }
-// }
-
 var seattleLocation = new SalmonCookiesShop('Seattle', 23, 65, 6.3, '522 19th Ave E, Seattle, WA 98112', '(206)735-7970');
-// getCookiesSalesReport(seattleLocation, seattleLocation.maxCus, seattleLocation.minCus, seattleLocation.avgCookieSale);
 disaplyTablebyCity(seattleLocation);
 
 var tokyoLocation = new SalmonCookiesShop('Tokyo', 3, 24, 1.2, '1 Chome-21-15 Jingumae, Shibuya City, Tokyo 150-0001, Japan', '+81 120-867-622');
-// getCookiesSalesReport(tokyoLocation, tokyoLocation.maxCus, tokyoLocation.minCus, tokyoLocation.avgCookieSale);
 disaplyTablebyCity(tokyoLocation);
 
 var dubaiLocation = new SalmonCookiesShop('Dubai', 11, 38, 3.7, '34 14 C St - Dubai - United Arab Emirates', '+971 50 164 9000');
-// getCookiesSalesReport(dubaiLocation, dubaiLocation.maxCus, dubaiLocation.minCus, dubaiLocation.avgCookieSale);
 disaplyTablebyCity(dubaiLocation);
 
 var parisLocation = new SalmonCookiesShop('Paris', 20, 38, 2.3, '34 Rue Montorgueil, 75001 Paris, France', '+33 9 83 48 36 76');
-// getCookiesSalesReport(parisLocation, parisLocation.maxCus, parisLocation.minCus, parisLocation.avgCookieSale);
 disaplyTablebyCity(parisLocation);
 
 var limaLocation = new SalmonCookiesShop('Lima', 2, 16, 4.6, 'Jirón Mariscal Miller 212, Cercado de Lima 15046, Peru', '(800)457-4779');
-// getCookiesSalesReport(limaLocation, limaLocation.maxCus, limaLocation.minCus, limaLocation.avgCookieSale);
 disaplyTablebyCity(limaLocation);
 
 disaplyTotalTable(seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation);
