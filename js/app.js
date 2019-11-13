@@ -39,7 +39,7 @@ addElement('th', tableRowhead, 'Daily Location Total');
 
 // Display a city by a row
 function disaplyTablebyCity(shopLocation) {
-  shopLocation.getCookiesSalesReport();
+  // shopLocation.getCookiesSalesReport();
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var tableRowBody = addElement('tr', tableBycity);
   tableBycity.appendChild(tableRowBody);
@@ -55,7 +55,7 @@ function disaplyTotalTable(seattle, tokyo, dubai, paris, lima) {
   var tableRowBody = addElement('tr', tableBycity);
   tableBycity.appendChild(tableRowBody);
   addElement('td', tableRowBody, 'Total');
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < hours.length; i++) {
     addElement('td', tableRowBody, seattle.cookiesSoldEachHour[i] + tokyo.cookiesSoldEachHour[i] + dubai.cookiesSoldEachHour[i] + paris.cookiesSoldEachHour[i] + lima.cookiesSoldEachHour[i]);
   }
   addElement('td', tableRowBody, seattle.totalCookies + tokyo.totalCookies + dubai.totalCookies + paris.totalCookies + lima.totalCookies + ' cookies');
@@ -71,6 +71,7 @@ function SalmonCookiesShop(shopLocation, min, max, avg, address, phone) {
   this.totalCookies = 0,
   this.address = address;
   this.phone = phone;
+  this.getCookiesSalesReport();
 }
 
 
