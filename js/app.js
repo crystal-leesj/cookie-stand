@@ -101,3 +101,4 @@ var limaLocation = new SalmonCookiesShop('Lima', 2, 16, 4.6, 'Jirón Mariscal Mi
 disaplyTablebyCity(limaLocation);
 
 disaplyTotalTable(seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation);
+
