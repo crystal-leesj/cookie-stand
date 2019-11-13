@@ -12,40 +12,22 @@ h2 {
   color: darkslateblue;
 }
 
-ul {
-  width: 30%;
-  border: 2px solid linen;
-  border-radius: 25px;
-  padding: 20px 40px;
+table {
+  width: 100%;
 }
 
-#seattle ul {
-  background-color: darkslategray;
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
 }
 
-#tokyo ul {
-  background-color: darkslateblue;
+td:last-child {
+  background-color: rgb(91, 80, 151);
 }
 
-#dubai ul {
-  background-color: rgb(115, 116, 156);
-}
-
-#paris ul {
-  background-color: rgb(73, 85, 40);
-}
-
-#lima ul {
-  background-color: rgb(45, 118, 119);
-}
-
-li {
-  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  color: lightpink;
-}
-
-li:last-child {
-  background-color: rgb(25, 24, 31);
+tr:last-child {
+  background-color: rgb(221, 177, 111);
 }
 
 p {
