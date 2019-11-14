@@ -15,6 +15,7 @@ h1 {
 h2 {
   font-family: 'Times New Roman', Times, serif;
   color: darkslateblue;
+  text-align: center;
 }
 
 table {
@@ -42,4 +43,10 @@ p {
 
 footer {
   text-align: right;
+}
+
+#contactInfo {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 300px;
 }

@@ -102,3 +102,24 @@ disaplyTablebyCity(limaLocation);
 
 disaplyTotalTable(seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation);
 
+
+function displayLocationInfo(city) {
+  var introContainer = document.getElementById('tableContainer');
+  console.log('introContainer :', introContainer);
+  var element =  addElement('div', introContainer);
+  addElement('h2', element, city.location);
+  var listBycity = addElement('ul', element);
+  listBycity.id = 'contactInfo';
+  addElement('li', listBycity, 'Location :' + city.location);
+  addElement('li', listBycity, 'Address :' + city.address);
+  addElement('li', listBycity, 'Phone :' + city.phone);
+}
+
+displayLocationInfo(seattleLocation);
+displayLocationInfo(tokyoLocation);
+displayLocationInfo(dubaiLocation);
+displayLocationInfo(parisLocation);
+displayLocationInfo(limaLocation);
+
+// var imgElem = addElement('img', article);
+// imgElem.setAttribute('src', this.imgUrl);
