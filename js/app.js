@@ -101,7 +101,7 @@ disaplyTotalTable(seattleLocation, tokyoLocation, dubaiLocation, parisLocation, 
 
 function displayLocationInfo(city) {
   var introContainer = document.getElementById('tableContainer');
-  console.log('introContainer :', introContainer);
+  // console.log('introContainer :', introContainer);
   var element =  addElement('div', introContainer);
   addElement('h2', element, city.location);
   var listBycity = addElement('ul', element);
@@ -117,5 +117,3 @@ displayLocationInfo(dubaiLocation);
 displayLocationInfo(parisLocation);
 displayLocationInfo(limaLocation);
 
-// var imgElem = addElement('img', article);
-// imgElem.setAttribute('src', this.imgUrl);
