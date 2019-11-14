@@ -26,10 +26,8 @@ function addElement(tag, container, text) {
 
 var tableContainer = document.getElementById('tableContainer');
 var tableBycity = addElement('table', tableContainer);
-tableContainer.appendChild(tableBycity);
 
 var tableRowhead = addElement('tr', tableBycity);
-tableBycity.appendChild(tableRowhead);
 
 addElement('th', tableRowhead, '');
 for (var ii = 0; ii < hours.length; ii++) {
@@ -42,7 +40,6 @@ function disaplyTablebyCity(shopLocation) {
   // shopLocation.getCookiesSalesReport();
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var tableRowBody = addElement('tr', tableBycity);
-  tableBycity.appendChild(tableRowBody);
   addElement('td', tableRowBody, shopLocation.location);
   for (var i = 0; i < hourlySalesArr.length; i++) {
     addElement('td', tableRowBody, hourlySalesArr[i].value);
@@ -53,7 +50,6 @@ function disaplyTablebyCity(shopLocation) {
 // Display total row
 function disaplyTotalTable(seattle, tokyo, dubai, paris, lima) {
   var tableRowBody = addElement('tr', tableBycity);
-  tableBycity.appendChild(tableRowBody);
   addElement('td', tableRowBody, 'Total');
   for (var i = 0; i < hours.length; i++) {
     addElement('td', tableRowBody, seattle.cookiesSoldEachHour[i] + tokyo.cookiesSoldEachHour[i] + dubai.cookiesSoldEachHour[i] + paris.cookiesSoldEachHour[i] + lima.cookiesSoldEachHour[i]);
