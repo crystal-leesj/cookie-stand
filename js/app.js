@@ -88,12 +88,9 @@ function SalmonCookiesShop(shopLocation, min, max, avg, address, phone) {
 // Generate the random number to get number of cookie sales in an hour
 // Get array of 14 hours of report with total sales
 SalmonCookiesShop.prototype.getCookiesSalesReport = function(){
-  console.log('***Name :', this.location);
   for (var i = 0; i < hours.length; i++) {
     var randomNum = Math.random() * (this.maxCus - this.minCus + 1) + this.minCus;
-    console.log('randomNum :', randomNum);
     var cookies = Math.round(randomNum * this.avgCookieSale);
-    console.log('cookies :', cookies);
     this.cookiesSoldEachHour.push(cookies);
     this.totalCookies += cookies;
   }
