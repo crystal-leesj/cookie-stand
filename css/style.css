@@ -6,6 +6,10 @@ body {
   background-color: darksalmon;
 }
 
+#hero-image {
+  margin-bottom: 60px;
+}
+
 h1 {
   font-family: 'Fredoka One', cursive;
   color: darkolivegreen;
@@ -49,4 +53,24 @@ footer {
   border: 1px solid black;
   margin: 0 auto;
   width: 300px;
+}
+
+#formContainer {
+  margin-bottom: 60px;
+}
+
+#formContainer input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#formContainer input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  font-size: 2em;
+  color: white;
+  border: none;
+  padding: 14px 40px;
 }
