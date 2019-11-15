@@ -14,7 +14,35 @@
         </nav> 
     </header>
     <main>
-      <img class="fit-picture" src="/img/salmon.png" alt='salmon'>
+      <div id='hero-image'>
+        <img class="fit-picture" src="/img/salmon.png" alt='salmon'>
+      </div>
+      <div id='formContainer'>
+        <h2>Create Salmon Cookies shop</h2>
+        <form id='salmonCookiesForm'>
+          <div>
+            <label for="location">Location</label>
+            <input type="text" name="location">
+          </div>
+          <div>
+            <label for="minCus">Min Customer</label>
+            <input type="number" name="minCustomer">
+          </div>
+          <div>
+            <label for="maxCus">Max Customer</label>
+            <input type="number" name="maxCustomer">
+          </div>
+          <div>
+            <label for="avgCus">Average Customer per hour</label>
+            <input type="number" step=any name="avgCustomer">
+          </div>
+          <div>
+          <div>
+            <input type="submit" value="Submit">
+          </div>
+          </div>
+        </form>
+      </div>
       <span id='introContainer'></span>
     </main>
     <footer>
