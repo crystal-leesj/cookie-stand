@@ -40,11 +40,9 @@ addElement('th', tableRowhead, 'Daily Location Total');
 
 // Display a city by a row
 function disaplyTablebyCity(shopLocation) {
-  // shopLocation.getCookiesSalesReport();
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var tableRowBody = addElement('tr', tableBycity);
   tableRowBody.className = 'dataRows';
-  // tableRowBody.id = 'dataRow'+shopLocation.location;
   addElement('td', tableRowBody, shopLocation.location);
   for (var i = 0; i < hourlySalesArr.length; i++) {
     addElement('td', tableRowBody, hourlySalesArr[i].value);
@@ -54,9 +52,6 @@ function disaplyTablebyCity(shopLocation) {
 
 // Display total row
 function disaplyTotalTable() {
-  // var lastRow = tableBycity.lastElementChild;
-  // console.log('lastRow :', lastRow);
-  // var tableRowBody = lastRow.insertRow(-1);
   var tableRowBody = addElement('tr', tableBycity);
   addElement('td', tableRowBody, 'Total');
   var totalByHour = 0;
@@ -96,31 +91,6 @@ SalmonCookiesShop.prototype.getCookiesSalesReport = function(){
   }
 };
 
-var seattleLocation = new SalmonCookiesShop('Seattle', 23, 65, 6.3, '522 19th Ave E, Seattle, WA 98112', '(206)735-7970');
-allShops.push(createHourlySalesObj(hours, seattleLocation.cookiesSoldEachHour));
-disaplyTablebyCity(seattleLocation);
-
-var tokyoLocation = new SalmonCookiesShop('Tokyo', 3, 24, 1.2, '1 Chome-21-15 Jingumae, Shibuya City, Tokyo 150-0001, Japan', '+81 120-867-622');
-allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
-disaplyTablebyCity(tokyoLocation);
-
-var dubaiLocation = new SalmonCookiesShop('Dubai', 11, 38, 3.7, '34 14 C St - Dubai - United Arab Emirates', '+971 50 164 9000');
-allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
-disaplyTablebyCity(dubaiLocation);
-
-var parisLocation = new SalmonCookiesShop('Paris', 20, 38, 2.3, '34 Rue Montorgueil, 75001 Paris, France', '+33 9 83 48 36 76');
-allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
-disaplyTablebyCity(parisLocation);
-
-var limaLocation = new SalmonCookiesShop('Lima', 2, 16, 4.6, 'Jirón Mariscal Miller 212, Cercado de Lima 15046, Peru', '(800)457-4779');
-allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
-disaplyTablebyCity(limaLocation);
-
-// console.log('allShops: ', allShops);
-
-// disaplyTotalTable();
-
-
 function displayLocationInfo(city) {
   var introContainer = document.getElementById('introContainer');
   // console.log('introContainer :', introContainer);
@@ -133,11 +103,35 @@ function displayLocationInfo(city) {
   addElement('li', listBycity, 'Phone :' + city.phone);
 }
 
-displayLocationInfo(seattleLocation);
-displayLocationInfo(tokyoLocation);
-displayLocationInfo(dubaiLocation);
-displayLocationInfo(parisLocation);
-displayLocationInfo(limaLocation);
+function addInitialShops() {
+  var seattleLocation = new SalmonCookiesShop('Seattle', 23, 65, 6.3, '522 19th Ave E, Seattle, WA 98112', '(206)735-7970');
+  allShops.push(createHourlySalesObj(hours, seattleLocation.cookiesSoldEachHour));
+  disaplyTablebyCity(seattleLocation);
+
+  var tokyoLocation = new SalmonCookiesShop('Tokyo', 3, 24, 1.2, '1 Chome-21-15 Jingumae, Shibuya City, Tokyo 150-0001, Japan', '+81 120-867-622');
+  allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
+  disaplyTablebyCity(tokyoLocation);
+
+  var dubaiLocation = new SalmonCookiesShop('Dubai', 11, 38, 3.7, '34 14 C St - Dubai - United Arab Emirates', '+971 50 164 9000');
+  allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
+  disaplyTablebyCity(dubaiLocation);
+
+  var parisLocation = new SalmonCookiesShop('Paris', 20, 38, 2.3, '34 Rue Montorgueil, 75001 Paris, France', '+33 9 83 48 36 76');
+  allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
+  disaplyTablebyCity(parisLocation);
+
+  var limaLocation = new SalmonCookiesShop('Lima', 2, 16, 4.6, 'Jirón Mariscal Miller 212, Cercado de Lima 15046, Peru', '(800)457-4779');
+  allShops.push(createHourlySalesObj(hours, tokyoLocation.cookiesSoldEachHour));
+  disaplyTablebyCity(limaLocation);
+
+  displayLocationInfo(seattleLocation);
+  displayLocationInfo(tokyoLocation);
+  displayLocationInfo(dubaiLocation);
+  displayLocationInfo(parisLocation);
+  displayLocationInfo(limaLocation);
+}
+
+addInitialShops();
 
 
 function deleteTotalRow() {

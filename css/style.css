@@ -16,6 +16,12 @@ h1 {
   text-align: center;
 }
 
+#formContainer h2 {
+  font-family: 'Bree Serif', serif;
+  font-size: 2em;
+  color: #431462;
+}
+
 h2 {
   font-family: 'Times New Roman', Times, serif;
   color: darkslateblue;
@@ -39,6 +45,12 @@ td:last-child {
 
 tr:last-child {
   background-color: rgb(221, 177, 111);
+}
+
+#formContainer label {
+  font-family: 'Bree Serif', serif;
+  font-size: 1.6em;
+  color: rgb(131, 94, 38);
 }
 
 p {
