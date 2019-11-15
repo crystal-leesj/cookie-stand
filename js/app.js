@@ -40,11 +40,9 @@ addElement('th', tableRowhead, 'Daily Location Total');
 
 // Display a city by a row
 function disaplyTablebyCity(shopLocation) {
-  // shopLocation.getCookiesSalesReport();
   var hourlySalesArr = createHourlySalesObj(hours, shopLocation.cookiesSoldEachHour);
   var tableRowBody = addElement('tr', tableBycity);
   tableRowBody.className = 'dataRows';
-  // tableRowBody.id = 'dataRow'+shopLocation.location;
   addElement('td', tableRowBody, shopLocation.location);
   for (var i = 0; i < hourlySalesArr.length; i++) {
     addElement('td', tableRowBody, hourlySalesArr[i].value);
@@ -54,9 +52,6 @@ function disaplyTablebyCity(shopLocation) {
 
 // Display total row
 function disaplyTotalTable() {
-  // var lastRow = tableBycity.lastElementChild;
-  // console.log('lastRow :', lastRow);
-  // var tableRowBody = lastRow.insertRow(-1);
   var tableRowBody = addElement('tr', tableBycity);
   addElement('td', tableRowBody, 'Total');
   var totalByHour = 0;
