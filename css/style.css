@@ -68,9 +68,14 @@ footer {
 
 #formContainer input[type=submit] {
   width: 50%;
-  background-color: #4CAF50;
+  background-color: #9900ff;
   font-size: 2em;
-  color: white;
+  color: #f5e6ff;
   border: none;
   padding: 14px 40px;
+  border-radius: 15px 50px; 
+}
+
+#formContainer input[type=submit]:hover {
+  background-color: #ffcc00;
 }
